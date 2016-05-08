@@ -13,7 +13,8 @@ angular.module('DomainDrivenApp', [])
             },
             {
                 name: "Now",
-                url: "#/app/now"
+                url: "#/app/now",
+                class: "active"
             },
             {
                 name: "Archive",

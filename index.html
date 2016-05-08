@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <ul class="nav navbar-nav">
-                <li ng-repeat="menu in menus">
+                <li ng-repeat="menu in menus" class="{{menu.class}}">
                     <a href="{{menu.url}}">{{menu.name}}</a>
                 </li>
             </ul>
