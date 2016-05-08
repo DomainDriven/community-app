@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="DomainDrivenApp">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>DomainDriven Ready for seminar Application.</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li><a href="#/app/topics">Ready for seminar app</a></li>
+                <li class="active"><a href="#/app/now">now</a></li>
+                <li><a href="#/app/archive">archive</a></li>
+                <li><a href="#/login">Logout</a></li>
+            </ul>
+        </div>
+        <div class="nav navbar-right">
+            <p class="navbar-text">DomainDriven</p>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="list-group">
+                <a href="#" class="list-group-item">제 1회 정기 세미나 <span class="badge">Archived</span></a>
+                <a href="#" class="list-group-item">제 2회 정기 세미나 <span class="badge">Archived</span></a>
+                <a href="#" class="list-group-item active">제 3회 정기 세미나 <span class="badge">Now</span></a>
+            </div>
+            <form action onsubmit="return false">
+                <div class="table">
+                    <div class="table-row-group">
+                        <div class="table-row">
+                            <div class="table-cell">
+                                <input type="text" class="form-control" placeholder="Next seminar">
+                            </div>
+                            <div class="table-cell" style="width: 60px; vertical-align: top;">
+                                <button type="submit" class="btn btn-default pull-right">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-8">
+            <h1>정기 세미나 3회</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Worker</th>
+                    <th>Progress</th>
+                    <th>Complete</th>
+                    <th>Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="center-y">
+                        <a href="speaker.html"><span class="center-y">강사섭외</span></a>
+                    </td>
+                    <td class="center-y">
+                        <a href="worker.html"><span class="center-y">안재열</span></a>
+                    </td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuemax="100" aria-valuemin="0"
+                                 aria-valuenow="50" style="width: 50%;">50%
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-success full-width disabled">Complete</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger full-width">Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center-y">
+                        <a href="speaker.html"><span class="center-y">장소예약</span></a>
+                    </td>
+                    <td class="center-y">
+                        <a href="worker.html"><span class="center-y">이동훈</span></a>
+                    </td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuemax="100" aria-valuemin="0"
+                                 aria-valuenow="50" style="width: 50%;">50%
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-success full-width disabled">Complete</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger full-width">Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center-y">
+                        <a href="speaker.html"><span class="center-y">모임등록</span></a>
+                    </td>
+                    <td class="center-y">
+                        <a href="worker.html"><span class="center-y">박세종</span></a>
+                    </td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuemax="100" aria-valuemin="0"
+                                 aria-valuenow="50" style="width: 50%;">50%
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-success full-width disabled">Complete</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger full-width">Remove</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <form role="form">
+                <div class="form-group">
+                    <label>Add Task</label>
+                    <input type="text" class="form-control" placeholder="New task">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

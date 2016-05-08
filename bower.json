@@ -1,0 +1,21 @@
+{
+  "name": "domaindriven-community",
+  "description": "Ready for seminar which is regulary held by DomainDriven.",
+  "main": "index.js",
+  "authors": [
+    "Donghoon-Lee",
+    "Jaeyeol-Ahn"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37"
+  }
+}

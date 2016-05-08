@@ -1,0 +1,17 @@
+{
+  "name": "domaindriven-community",
+  "version": "1.0.0",
+  "description": "Ready for seminar which is regulary held by DomainDriven.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Donghoon-Lee, Jaeyeol-Ahn",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "date-range-picker": "^0.3.4",
+    "moment": "^2.13.0"
+  }
+}
