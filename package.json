@@ -12,6 +12,7 @@
     "angular": "^1.5.5",
     "bootstrap": "^3.3.6",
     "date-range-picker": "^0.3.4",
+    "jquery": "^2.2.3",
     "moment": "^2.13.0"
   }
 }

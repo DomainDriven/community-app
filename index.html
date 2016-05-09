@@ -13,8 +13,9 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <ul class="nav navbar-nav">
-                <li ng-repeat="menu in menus" class="{{menu.class}}">
-                    <a href="{{menu.url}}">{{menu.name}}</a>
+                <li ng-repeat="menu in menus"
+                    ng-class="{'active' : isCurrentMenu(menu)}">
+                    <a href="{{menu.url}}" ng-click="setCurrentMenu(menu)">{{menu.name}}</a>
                 </li>
             </ul>
         </div>
@@ -28,7 +29,10 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="list-group">
-                <a href="#" class="list-group-item {{seminar.class}}" ng-repeat="seminar in seminars">
+                <a href="#" class="list-group-item"
+                   ng-repeat="seminar in seminars"
+                   ng-class="{'active' : isCurrentSeminar(seminar)}"
+                   ng-click="setCurrentSeminar(seminar)">
                     {{seminar.title}} <span class="badge">{{seminar.state}}</span>
                 </a>
             </div>
@@ -48,7 +52,7 @@
             </form>
         </div>
         <div class="col-sm-8">
-            <h1>정기 세미나 3회</h1>
+            <h1>{{currentSeminar.title}}</h1>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -60,7 +64,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="task in tasks">
+                <tr ng-repeat="task in currentSeminar.tasks">
                     <td class="center-y">
                         <a href="{{task.taskDetail}}"><span class="center-y">{{task.name}}</span></a>
                     </td>
