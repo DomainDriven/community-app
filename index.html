@@ -12,10 +12,14 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
+            <a href="index.html">
+                <img src="assets/img/DomainDrivenLogo.png" alt="logo" class="logo pull-left"/>
+            </a>
             <ul class="nav navbar-nav">
                 <li ng-repeat="menu in menus"
+                    ng-click="setCurrentMenu(menu)"
                     ng-class="{'active' : isCurrentMenu(menu)}">
-                    <a href="{{menu.url}}" ng-click="setCurrentMenu(menu)">{{menu.name}}</a>
+                    <a href="{{menu.url}}">{{menu.name}}</a>
                 </li>
             </ul>
         </div>
@@ -30,7 +34,7 @@
         <div class="col-sm-4">
             <div class="list-group">
                 <a href="#" class="list-group-item"
-                   ng-repeat="seminar in seminars"
+                   ng-repeat="seminar in seminars | filter:{state:currentMenu.state}"
                    ng-class="{'active' : isCurrentSeminar(seminar)}"
                    ng-click="setCurrentSeminar(seminar)">
                     {{seminar.title}} <span class="badge">{{seminar.state}}</span>

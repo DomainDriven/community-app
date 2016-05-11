@@ -9,29 +9,25 @@ angular.module('DomainDrivenApp', [])
         $scope.menus = [
             {
                 id: 0,
-                name: "Ready for seminar app",
-                url: "index.html"
+                name: "Now",
+                state: "Now",
+                url: "#"
             },
             {
                 id: 1,
-                name: "Now",
-                url: "#/app/now",
-                class: "active"
+                name: "Archived",
+                state: "Archived",
+                url: "#"
             },
             {
                 id: 2,
-                name: "Archive",
-                url: "#/app/archive"
+                name: "Register Speaker",
+                url: "#"
             },
             {
                 id: 3,
-                name: "Register Speaker",
-                url: "#/app/register"
-            },
-            {
-                id: 4,
                 name: "Logout",
-                url: "#/login"
+                url: "#"
             }
 
         ];
@@ -46,7 +42,7 @@ angular.module('DomainDrivenApp', [])
                         id: 0,
                         name: "강사 섭외",
                         worker: "안재열",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "speaker.html",
                         workerDetail: ""
                     },
@@ -54,7 +50,7 @@ angular.module('DomainDrivenApp', [])
                         id: 1,
                         name: "장소 예약",
                         worker: "이동훈",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "place.html",
                         workerDetail: ""
                     },
@@ -62,7 +58,7 @@ angular.module('DomainDrivenApp', [])
                         id: 2,
                         name: "포스터 제작",
                         worker: "안재열",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "poster.html",
                         workerDetail: ""
                     },
@@ -70,7 +66,7 @@ angular.module('DomainDrivenApp', [])
                         id: 3,
                         name: "모임 등록",
                         worker: "박세종",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "seminar.html",
                         workerDetail: ""
                     },
@@ -78,7 +74,7 @@ angular.module('DomainDrivenApp', [])
                         id: 4,
                         name: "홍보",
                         worker: ["박세종", "안재열", "이동훈"],
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "promote.html",
                         workerDetail: ""
                     },
@@ -86,7 +82,7 @@ angular.module('DomainDrivenApp', [])
                         id: 5,
                         name: "회고",
                         worker: ["박세종", "안재열", "이동훈"],
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "rememberence.html",
                         workerDetail: ""
                     }
@@ -101,7 +97,7 @@ angular.module('DomainDrivenApp', [])
                         id: 0,
                         name: "강사 섭외",
                         worker: "안재열",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "speaker.html",
                         workerDetail: ""
                     },
@@ -109,7 +105,7 @@ angular.module('DomainDrivenApp', [])
                         id: 1,
                         name: "장소 예약",
                         worker: "이동훈",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "place.html",
                         workerDetail: ""
                     },
@@ -117,7 +113,7 @@ angular.module('DomainDrivenApp', [])
                         id: 2,
                         name: "포스터 제작",
                         worker: "안재열",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "poster.html",
                         workerDetail: ""
                     },
@@ -125,7 +121,7 @@ angular.module('DomainDrivenApp', [])
                         id: 3,
                         name: "모임 등록",
                         worker: "박세종",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "seminar.html",
                         workerDetail: ""
                     },
@@ -133,7 +129,7 @@ angular.module('DomainDrivenApp', [])
                         id: 4,
                         name: "홍보",
                         worker: ["박세종", "안재열", "이동훈"],
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "promote.html",
                         workerDetail: ""
                     },
@@ -141,7 +137,7 @@ angular.module('DomainDrivenApp', [])
                         id: 5,
                         name: "회고",
                         worker: ["박세종", "안재열", "이동훈"],
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "rememberence.html",
                         workerDetail: ""
                     }
@@ -151,13 +147,12 @@ angular.module('DomainDrivenApp', [])
                 id: 2,
                 title: "제 3회 정기 세미나",
                 state: "Now",
-                class: "active",
                 tasks: [
                     {
                         id: 0,
                         name: "강사 섭외",
                         worker: "안재열",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "speaker.html",
                         workerDetail: ""
                     },
@@ -165,7 +160,7 @@ angular.module('DomainDrivenApp', [])
                         id: 1,
                         name: "장소 예약",
                         worker: "이동훈",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "place.html",
                         workerDetail: ""
                     },
@@ -173,7 +168,7 @@ angular.module('DomainDrivenApp', [])
                         id: 2,
                         name: "포스터 제작",
                         worker: "안재열",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "poster.html",
                         workerDetail: ""
                     },
@@ -181,7 +176,7 @@ angular.module('DomainDrivenApp', [])
                         id: 3,
                         name: "모임 등록",
                         worker: "박세종",
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "seminar.html",
                         workerDetail: ""
                     },
@@ -189,7 +184,7 @@ angular.module('DomainDrivenApp', [])
                         id: 4,
                         name: "홍보",
                         worker: ["박세종", "안재열", "이동훈"],
-                        progress: "100",
+                        progress: 100,
                         taskDetail: "promote.html",
                         workerDetail: ""
                     },
@@ -197,7 +192,7 @@ angular.module('DomainDrivenApp', [])
                         id: 5,
                         name: "회고",
                         worker: ["박세종", "안재열", "이동훈"],
-                        progress: "0",
+                        progress: 0,
                         taskDetail: "rememberence.html",
                         workerDetail: ""
                     }
@@ -205,11 +200,18 @@ angular.module('DomainDrivenApp', [])
             }
         ];
 
-        $scope.currentMenu = $scope.menus[1];
+        $scope.currentMenu = $scope.menus[0];
         $scope.currentSeminar = $scope.seminars[$scope.seminars.length - 1];
 
         function setCurrentMenu(menu) {
             $scope.currentMenu = menu;
+            if ($scope.currentMenu.state === "Now") {
+                $scope.currentSeminar = $scope.seminars[$scope.seminars.length - 1];
+            } else if ($scope.currentMenu.state === "Archived") {
+                $scope.currentSeminar = $scope.seminars[$scope.seminars.length - 2];
+            } else {
+                $scope.currentSeminar = $scope.seminars[$scope.seminars.length - 1];
+            }
             console.log("Current Menu: " + menu.name);
         }
 

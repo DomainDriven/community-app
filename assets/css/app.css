@@ -25,3 +25,10 @@
 .table-cell {
     display: table-cell;
 }
+
+.logo {
+    padding: 5px;
+    margin-right: 15px;
+    width: 90px;
+    height: 50px;
+}
