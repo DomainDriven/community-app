@@ -18,18 +18,7 @@ angular.module('DomainDrivenApp', [])
                 name: "Archived",
                 state: "Archived",
                 url: "#"
-            },
-            {
-                id: 2,
-                name: "Register Speaker",
-                url: "#"
-            },
-            {
-                id: 3,
-                name: "Logout",
-                url: "#"
             }
-
         ];
 
         $scope.seminars = [
