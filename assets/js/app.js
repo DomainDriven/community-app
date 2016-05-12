@@ -33,7 +33,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "안재열",
                         progress: 100,
                         taskDetail: "speaker.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 1,
@@ -41,7 +42,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "이동훈",
                         progress: 100,
                         taskDetail: "place.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 2,
@@ -49,7 +51,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "안재열",
                         progress: 100,
                         taskDetail: "poster.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 3,
@@ -57,7 +60,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "박세종",
                         progress: 100,
                         taskDetail: "seminar.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 4,
@@ -65,7 +69,8 @@ angular.module('DomainDrivenApp', [])
                         worker: ["박세종", "안재열", "이동훈"],
                         progress: 100,
                         taskDetail: "promote.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 5,
@@ -73,7 +78,8 @@ angular.module('DomainDrivenApp', [])
                         worker: ["박세종", "안재열", "이동훈"],
                         progress: 100,
                         taskDetail: "rememberence.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     }
                 ]
             },
@@ -88,7 +94,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "안재열",
                         progress: 100,
                         taskDetail: "speaker.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 1,
@@ -96,7 +103,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "이동훈",
                         progress: 100,
                         taskDetail: "place.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 2,
@@ -104,7 +112,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "안재열",
                         progress: 100,
                         taskDetail: "poster.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 3,
@@ -112,7 +121,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "박세종",
                         progress: 100,
                         taskDetail: "seminar.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 4,
@@ -120,7 +130,8 @@ angular.module('DomainDrivenApp', [])
                         worker: ["박세종", "안재열", "이동훈"],
                         progress: 100,
                         taskDetail: "promote.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 5,
@@ -128,7 +139,8 @@ angular.module('DomainDrivenApp', [])
                         worker: ["박세종", "안재열", "이동훈"],
                         progress: 100,
                         taskDetail: "rememberence.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     }
                 ]
             },
@@ -143,7 +155,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "안재열",
                         progress: 100,
                         taskDetail: "speaker.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 1,
@@ -151,7 +164,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "이동훈",
                         progress: 100,
                         taskDetail: "place.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 2,
@@ -159,7 +173,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "안재열",
                         progress: 100,
                         taskDetail: "poster.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 3,
@@ -167,7 +182,8 @@ angular.module('DomainDrivenApp', [])
                         worker: "박세종",
                         progress: 100,
                         taskDetail: "seminar.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: true
                     },
                     {
                         id: 4,
@@ -175,7 +191,8 @@ angular.module('DomainDrivenApp', [])
                         worker: ["박세종", "안재열", "이동훈"],
                         progress: 100,
                         taskDetail: "promote.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: false
                     },
                     {
                         id: 5,
@@ -183,7 +200,8 @@ angular.module('DomainDrivenApp', [])
                         worker: ["박세종", "안재열", "이동훈"],
                         progress: 0,
                         taskDetail: "rememberence.html",
-                        workerDetail: ""
+                        workerDetail: "",
+                        isCompleted: false
                     }
                 ]
             }

@@ -82,7 +82,9 @@
                         </div>
                     </td>
                     <td>
-                        <button class="btn btn-success full-width disabled">Complete</button>
+                        <button class="btn btn-success full-width"
+                                ng-class="{'disabled' : task.isCompleted}">Complete
+                        </button>
                     </td>
                 </tr>
                 </tbody>
