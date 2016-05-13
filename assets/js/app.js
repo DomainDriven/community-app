@@ -34,7 +34,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "speaker.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 1,
@@ -43,7 +44,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "place.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 2,
@@ -52,7 +54,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "poster.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 3,
@@ -61,7 +64,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "seminar.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 4,
@@ -70,7 +74,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "promote.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 5,
@@ -79,7 +84,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "rememberence.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     }
                 ]
             },
@@ -95,7 +101,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "speaker.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 1,
@@ -104,7 +111,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "place.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 2,
@@ -113,7 +121,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "poster.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 3,
@@ -122,7 +131,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "seminar.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 4,
@@ -131,7 +141,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "promote.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 5,
@@ -140,7 +151,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "rememberence.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     }
                 ]
             },
@@ -156,7 +168,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "speaker.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 1,
@@ -165,7 +178,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "place.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 2,
@@ -174,7 +188,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "poster.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 3,
@@ -183,16 +198,18 @@ angular.module('DomainDrivenApp', [])
                         progress: 100,
                         taskDetail: "seminar.html",
                         workerDetail: "",
-                        isCompleted: true
+                        isCompleted: true,
+                        text: "Restart "
                     },
                     {
                         id: 4,
                         name: "홍보",
                         worker: ["박세종", "안재열", "이동훈"],
-                        progress: 100,
+                        progress: 0,
                         taskDetail: "promote.html",
                         workerDetail: "",
-                        isCompleted: false
+                        isCompleted: false,
+                        text: "Complete"
                     },
                     {
                         id: 5,
@@ -201,7 +218,8 @@ angular.module('DomainDrivenApp', [])
                         progress: 0,
                         taskDetail: "rememberence.html",
                         workerDetail: "",
-                        isCompleted: false
+                        isCompleted: false,
+                        text: "Complete"
                     }
                 ]
             }
@@ -235,8 +253,29 @@ angular.module('DomainDrivenApp', [])
             return $scope.currentSeminar !== null && seminar.title === $scope.currentSeminar.title;
         }
 
+        function updateTaskState(task) {
+            var index = _.findIndex($scope.currentSeminar.tasks, function (b) {
+                return b.id == task.id;
+            });
+
+            var currentTask = $scope.currentSeminar.tasks[index];
+            var currentTaskState = currentTask.isCompleted;
+
+            console.log("This task index is " + index);
+            console.log("This task is completed : " + currentTaskState);
+
+            if (currentTaskState) {
+                currentTask.isCompleted = false;
+                currentTask.text = "Complete";
+            } else {
+                currentTask.isCompleted = true;
+                currentTask.text = "Restart ";
+            }
+        }
+
         $scope.setCurrentMenu = setCurrentMenu;
         $scope.isCurrentMenu = isCurrentMenu;
         $scope.setCurrentSeminar = setCurrentSeminar;
         $scope.isCurrentSeminar = isCurrentSeminar;
+        $scope.updateTaskState = updateTaskState;
     });

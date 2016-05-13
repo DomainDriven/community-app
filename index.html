@@ -63,7 +63,7 @@
                     <th>Task</th>
                     <th>Worker</th>
                     <th>Progress</th>
-                    <th>Complete</th>
+                    <th>State</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -83,7 +83,8 @@
                     </td>
                     <td>
                         <button class="btn btn-success full-width"
-                                ng-class="{'disabled' : task.isCompleted}">Complete
+                                ng-class="{'btn-info' : task.isCompleted}"
+                                ng-click="updateTaskState(task)">{{task.text}}
                         </button>
                     </td>
                 </tr>
@@ -101,6 +102,7 @@
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/lodash/lodash.min.js"></script>
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="assets/js/app.js"></script>
 
