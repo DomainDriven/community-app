@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/admin-lte/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="node_modules/admin-lte/plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="node_modules/admin-lte/plugins/daterangepicker/daterangepicker-bs3.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body ng-controller="MainCtrl">
@@ -32,83 +34,133 @@
 </nav>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="list-group">
-                <a href="#" class="list-group-item"
-                   ng-repeat="seminar in seminars | filter:{state:currentMenu.state}"
-                   ng-class="{'active' : isCurrentSeminar(seminar)}"
-                   ng-click="setCurrentSeminar(seminar)">
-                    {{seminar.title}} <span class="badge">{{seminar.state}}</span>
-                </a>
-            </div>
-            <form action onsubmit="return false">
-                <div class="table">
-                    <div class="table-row-group">
-                        <div class="table-row">
-                            <div class="table-cell">
-                                <input type="text" class="form-control" placeholder="Next seminar">
-                            </div>
-                            <div class="table-cell" style="width: 60px; vertical-align: top;">
-                                <button type="submit" class="btn btn-default pull-right">Add</button>
+    <section class="content-header">
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 홈</a></li>
+            <li class="active">세미나</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item"
+                       ng-repeat="seminar in seminars | filter:{state:currentMenu.state}"
+                       ng-class="{'active' : isCurrentSeminar(seminar)}"
+                       ng-click="setCurrentSeminar(seminar)">
+                        {{seminar.title}} <span class="badge">{{seminar.state}}</span>
+                    </a>
+                </div>
+                <form action onsubmit="return false">
+                    <div class="table">
+                        <div class="table-row-group">
+                            <div class="table-row">
+                                <div class="table-cell" style="width: 60px; vertical-align: top;">
+                                    <button type="submit" class="btn btn-default pull-right"
+                                            data-toggle="modal" data-target="#add-seminar">세미나 추가
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
-        </div>
-        <div class="col-sm-8">
-            <h1>{{currentSeminar.title}}</h1>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Worker</th>
-                    <th>Progress</th>
-                    <th>State</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="task in currentSeminar.tasks">
-                    <td class="center-y">
-                        <a href="{{task.taskDetail}}"><span class="center-y">{{task.name}}</span></a>
-                    </td>
-                    <td class="center-y">
-                        <a href="{{task.workerDetail}}"><span class="center-y">{{task.worker}}</span></a>
-                    </td>
-                    <td>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuemax="100" aria-valuemin="0"
-                                 aria-valuenow="{{task.progress}}" style="width: {{task.progress}}%;">{{task.progress}}%
+                </form>
+                <div class="modal-wrapper">
+                    <div class="modal fade" id="add-seminar">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span></button>
+                                    <h4 class="modal-title">세미나 추가</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>세미나 예정일:</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <label for="reservation"></label>
+                                            <input name="daterange" type="text" class="form-control pull-right active"
+                                                   id="reservation">
+                                        </div>
+                                        <!-- /.input group -->
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close
+                                    </button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
+                            <!-- /.modal-content -->
                         </div>
-                    </td>
-                    <td>
-                        <button class="btn btn-success full-width"
-                                ng-class="{'btn-info' : task.isCompleted}"
-                                ng-click="updateTaskState(task)">{{task.text}}
-                        </button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <form role="form">
-                <div class="form-group">
-                    <label>Add Task</label>
-                    <input type="text" class="form-control" placeholder="New task">
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
                 </div>
-            </form>
+            </div>
+            <div class="col-sm-8">
+                <h3>{{currentSeminar.title}}</h3>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Worker</th>
+                        <th>Progress</th>
+                        <th>State</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="task in currentSeminar.tasks">
+                        <td class="center-y">
+                            <a href="{{task.taskDetail}}"><span class="center-y">{{task.name}}</span></a>
+                        </td>
+                        <td class="center-y">
+                            <a href="{{task.workerDetail}}"><span class="center-y">{{task.worker}}</span></a>
+                        </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuemax="100" aria-valuemin="0"
+                                     aria-valuenow="{{task.progress}}" style="width: {{task.progress}}%;">
+                                    {{task.progress}}%
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-success full-width"
+                                    ng-class="{'btn-info' : task.isCompleted}"
+                                    ng-click="updateTaskState(task)">{{task.text}}
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <form role="form">
+                    <div class="form-group">
+                        <label>Add Task</label>
+                        <input type="text" class="form-control" placeholder="New task">
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+        <!--.row-->
+    </section>
 </div>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="node_modules/admin-lte/dist/js/app.min.js"></script>
 <script src="node_modules/admin-lte/plugins/select2/select2.full.min.js"></script>
+<script src="node_modules/moment/min/moment.min.js"></script>
+<script src="node_modules/admin-lte/plugins/daterangepicker/daterangepicker.js"></script>
 <script src="node_modules/lodash/lodash.min.js"></script>
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="assets/js/app.js"></script>
+<script>
+    $('input[name="daterange"]').daterangepicker();
+</script>
 
 </body>
 </html>
