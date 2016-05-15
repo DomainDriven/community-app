@@ -1,6 +1,8 @@
 /**
  * Created by donghoon on 2016. 5. 8..
  */
+$(".speaker-multiple").select2();
+
 angular.module('DomainDrivenApp', [])
     .run(function () {
         console.log("DomainDriven Community App is ready!")
@@ -278,4 +280,24 @@ angular.module('DomainDrivenApp', [])
         $scope.setCurrentSeminar = setCurrentSeminar;
         $scope.isCurrentSeminar = isCurrentSeminar;
         $scope.updateTaskState = updateTaskState;
+    })
+    .controller('SpCtrl', function ($scope) {
+        $scope.speakers = [
+            {
+                name: "구강원",
+                subject: "Spring StateMachine"
+            },
+            {
+                name: "김형준",
+                subject: "성장하는 스타트업의 프로세스 개선기"
+            },
+            {
+                name: "이정근",
+                subject: "쉽고도 어려운 알파고와 머신러닝 이야기"
+            },
+            {
+                name: "장제휴",
+                subject: "Go 프로그래밍 소개"
+            }
+        ];
     });

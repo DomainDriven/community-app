@@ -9,6 +9,7 @@
   "author": "Donghoon-Lee, Jaeyeol-Ahn",
   "license": "MIT",
   "dependencies": {
+    "admin-lte": "^2.3.3",
     "angular": "^1.5.5",
     "bootstrap": "^3.3.6",
     "date-range-picker": "^0.3.4",

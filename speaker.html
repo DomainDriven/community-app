@@ -5,54 +5,72 @@
     <meta name="viewport" content="width=device-width"/>
     <title>Speaker Casting</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/admin-lte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="node_modules/admin-lte/plugins/select2/select2.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
-<body ng-controller="MainCtrl">
-
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <ul class="nav navbar-nav">
-                <li ng-repeat="menu in menus">
-                    <a href="{{menu.url}}">{{menu.name}}</a>
-                </li>
-            </ul>
-        </div>
-        <div class="nav navbar-right">
-            <p class="navbar-text">DomainDriven</p>
-        </div>
-    </div>
-</nav>
+<body ng-controller="SpCtrl">
 
 <div class="container">
-    <div class="page-header">
-        <h1>Task :
-            <small>강사 섭외</small>
+    <section class="content-header">
+        <h1>
+            Sub Task
+            <small>강사섭외</small>
         </h1>
-    </div>
-    <div class="row">
-        <div>
-            <h3>강사선택</h3>
-            <form role="form">
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon glyphicon glyphicon-user"> Speaker</span>
-                        <select id="speaker" class="form-control" data-live-search="true"
-                                title="Select Speaker">
-                            <option>구강원 : SpringStatement</option>
-                            <option>김형준 : 성장하는 스타트업 프로세스</option>
-                            <option>이정근 : 쉽고도 어려운 알파고 이야기</option>
-                            <option>장제휴 : Go 프로그래밍 소개</option>
-                        </select>
-                    </div>
+        <ol class="breadcrumb">
+            <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">강사섭외</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h3 class="box-title">강사정보</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i>
+                    </button>
                 </div>
-            </form>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="display: block;">
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="test">Multiple</label>
+                            <select class="form-control select2 select2-hidden-accessible speaker-multiple"
+                                    multiple="multiple"
+                                    data-placeholder="강사 선택" style="width: 100%;" tabindex="-1"
+                                    aria-hidden="true"
+                                    id="test">
+                                <option ng-repeat="speaker in speakers">{{speaker.name}} - {{speaker.subject}}</option>
+                            </select>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer" style="display: block;">
+                Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information
+                about
+                the plugin.
+            </div>
         </div>
-    </div>
+    </section>
+    <p><a href="index.html" class="pull-right">Back</a></p>
 </div>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/admin-lte/dist/js/app.min.js"></script>
+<script src="node_modules/admin-lte/plugins/select2/select2.full.min.js"></script>
+<script src="node_modules/lodash/lodash.min.js"></script>
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="assets/js/app.js"></script>
 
